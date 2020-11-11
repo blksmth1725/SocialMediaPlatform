@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://csheen1725:600West*@socialmediaplatform.mqqx7.mongodb.net/<dbname>?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://csheen1725:600West*@socialmediaplatform.mqqx7.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "jwtToken": "SecretTokenForEveryone"
 }
