@@ -1,4 +1,6 @@
 {
-  "mongoURI": "mongodb+srv://csheen1725:600West*@socialmediaplatform.mqqx7.mongodb.net/<dbname>?retryWrites=true&w=majority",
-  "jwtToken": "SecretTokenForEveryone"
+ "mongoURI": "mongodb+srv://csheen1725:600West*@socialmediaplatform.mqqx7.mongodb.net/<dbname>?retryWrites=true&w=majority",
+ "jwtToken": "SecretTokenForEveryone",
+ "githubClientId": "e97ea4bdb9a995065988",
+ "githubSecret": "85d392ade20ee8e6a6a6d37c69534e4298a25f49"
 }
