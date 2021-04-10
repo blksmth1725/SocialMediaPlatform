@@ -11,7 +11,7 @@ import store from "./store";
 import "./App.css";
 
 const App = () => (
-  <Provide store={store}>
+  <Provider store={store}>
     <Router>
       <Fragment>
         <Navbar />
@@ -24,7 +24,7 @@ const App = () => (
         </section>
       </Fragment>
     </Router>
-  </Provide>
+  </Provider>
 );
 
 export default App;
