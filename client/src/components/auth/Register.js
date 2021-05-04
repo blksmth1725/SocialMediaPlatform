@@ -6,7 +6,7 @@ import { register } from "../../actions/auth";
 import PropTypes from "prop-types";
 
 const Register = ({ setAlert, register }) => {
-  const [formData, setFromData] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
@@ -16,7 +16,7 @@ const Register = ({ setAlert, register }) => {
   const { name, email, password, password2 } = formData;
 
   const onChange = (e) =>
-    setFromData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = async (e) => {
     //Prevent default behavior => which automatically calls function
