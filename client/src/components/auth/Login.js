@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const [formData, setFromData] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
@@ -12,7 +12,7 @@ const Login = () => {
   const { email, password } = formData;
 
   const onChange = (e) =>
-    setFromData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = async (e) => {
     //Prevent default behavior => which automatically calls function
