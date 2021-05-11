@@ -5,7 +5,7 @@ import Spinner from "../layout/Spinner";
 import ProfileItem from "./ProfileItem";
 import { getProfiles } from "../../actions/profile";
 
-function Profiles({ getProfiles, profile: { profiles, loading } }) {
+const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   useEffect(() => {
     getProfiles();
   }, []);
@@ -33,7 +33,7 @@ function Profiles({ getProfiles, profile: { profiles, loading } }) {
       )}
     </Fragment>
   );
-}
+};
 
 Profiles.propTypes = {
   getProfiles: PropTypes.func.isRequired,
