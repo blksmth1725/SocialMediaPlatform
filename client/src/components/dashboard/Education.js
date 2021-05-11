@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 import { deleteEducation } from "../../actions/profile";
 import formatDate from "../../utils/formatDate";
 
-const Education = ({ experience, deleteEducation }) => {
-  const educations = experience.map((edu) => (
+const Education = ({ education, deleteEducation }) => {
+  const educations = education.map((edu) => (
     <tr key={edu._id}>
       <td>{edu.school}</td>
       <td className="hide-sm">{edu.degree}</td>
