@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import formatDate from "../../utils/formatDate";
 import { connect } from "react-redux";
 
@@ -23,18 +24,28 @@ const PostItem = ({
         <p className="my-1">{text}</p>
         <p className="post-date">Posted on {formatDate(date)}</p>
         <button type="button" className="btn btn-light">
-          <i className="fas fa-thumbs-up"></i>
-          <span>{likes}</span>
+          <i className="fas fa-thumbs-up"></i>{" "}
+          <span>
+            {likes.length > 0 && (
+              <span className="comment-count">{likes.length}</span>
+            )}
+          </span>
         </button>
         <button type="button" className="btn btn-light">
           <i className="fas fa-thumbs-down"></i>
         </button>
-        <a href="post.html" className="btn btn-primary">
-          Discussion <span className="comment-count">2</span>
-        </a>
-        <button type="button" className="btn btn-danger">
-          <i className="fas fa-times"></i>
-        </button>
+        <Link to={`/posts/${_id}`} className="btn btn-primary">
+          Discussion{" "}
+          {comments.length > 0 && (
+            <span className="comment-count">{comments.length}</span>
+          )}
+        </Link>
+
+        {!auth.loading && user === auth.user._id && (
+          <button type="button" className="btn btn-danger">
+            <i className="fas fa-times"></i>
+          </button>
+        )}
       </div>
     </div>
   );
