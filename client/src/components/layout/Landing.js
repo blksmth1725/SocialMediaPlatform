@@ -13,7 +13,7 @@ const Landing = ({ isAuthenticated }) => {
   const name = "Christian Sheen";
 
   return (
-    <Flex>
+    <Flex bg="primary" mt={64}>
       <Box w="50%">
         <Stack>
           <Spacer />
