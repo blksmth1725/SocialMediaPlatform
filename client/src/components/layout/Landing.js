@@ -1,33 +1,41 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import { Box, Flex, Heading, Spacer, Stack } from "@chakra-ui/layout";
 import PropTypes from "prop-types";
+import Login from "../auth/Login";
 
 const Landing = ({ isAuthenticated }) => {
   if (isAuthenticated) {
     return <Redirect to="/dashboard" />;
   }
 
+  const name = "Christian Sheen";
+
   return (
-    <section className="landing">
-      <div className="dark-overlay">
-        <div className="landing-inner">
-          <h1 className="x-large">Developer Connector</h1>
-          <p className="lead">
-            Create a developer profile/portfolio, share posts and get help from
-            other developers
+    <Flex>
+      <Box w="50%">
+        <Stack>
+          <Spacer />
+          <Heading size="md">Hi, I'm</Heading>
+          <Heading size="lg">{name}</Heading>
+          <Heading size="md">Web developer</Heading>
+
+          <Spacer />
+          <p>
+            A web developer that creatively solves problems and
+            deliver seamless user experiences. I strive to understand
+            people, technology, and how they interact to build useful
+            applications. The goal is to help others bring their ideas
+            to life through technology, helping them reach customers
+            and grow.
           </p>
-          <div className="buttons">
-            <Link to="/register" className="btn btn-primary">
-              Sign Up
-            </Link>
-            <Link to="/login" className="btn btn-light">
-              Login
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
+          <Spacer />
+        </Stack>
+      </Box>
+      <Spacer />
+      <Login />
+    </Flex>
   );
 };
 

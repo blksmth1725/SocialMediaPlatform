@@ -3,6 +3,8 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { login } from "../../actions/auth";
+import { Box } from "@chakra-ui/layout";
+import { Button } from "@chakra-ui/button";
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -31,7 +33,7 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <Fragment>
-      <section className="container">
+      <Box bg="grey.800">
         <h1 className="large text-primary">Sign In</h1>
         <p className="lead">
           <i className="fas fa-user"></i> Sign Into Your Account
@@ -47,8 +49,8 @@ const Login = ({ login, isAuthenticated }) => {
               required
             />
             <small className="form-text">
-              This site uses Gravatar so if you want a profile image, use a
-              Gravatar email
+              This site uses Gravatar so if you want a profile image,
+              use a Gravatar email
             </small>
           </div>
           <div className="form-group">
@@ -63,12 +65,14 @@ const Login = ({ login, isAuthenticated }) => {
             />
           </div>
 
-          <input type="submit" className="btn btn-primary" value="Login" />
+          <Button type="submit" variant="solid" bg="primary">
+            Login
+          </Button>
         </form>
         <p className="my-1">
           Don't have an account? <Link to="/register">Sign Up</Link>
         </p>
-      </section>
+      </Box>
     </Fragment>
   );
 };
