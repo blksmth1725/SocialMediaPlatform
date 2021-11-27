@@ -10,7 +10,7 @@ import {
   getCurrentProfile,
   deleteAccount,
 } from "../../actions/profile";
-import { Box, Heading } from "@chakra-ui/layout";
+import { Box, Heading, Spacer } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
 
 const Dashboard = ({
@@ -53,9 +53,9 @@ const Dashboard = ({
           <p>
             You have not yet setup a profile, please add some info
           </p>
-          <Button to="/create-profile" variant="solid" bg="highlight">
-            Create Profile
-          </Button>
+          <Link to="/create-profile">
+            <Button bg="highlight">Create Profile</Button>
+          </Link>
         </Fragment>
       )}
     </Box>
