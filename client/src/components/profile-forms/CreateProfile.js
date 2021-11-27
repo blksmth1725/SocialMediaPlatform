@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProfile } from "../../actions/profile";
+import { Heading, Input, Select, Button } from "@chakra-ui/react";
 
 function CreateProfile({ createProfile, history }) {
   const [formData, setFormData] = useState({
@@ -47,31 +48,38 @@ function CreateProfile({ createProfile, history }) {
 
   return (
     <Fragment>
-      <h1 className="large text-primary">Create Your Profile</h1>
-      <p className="lead">
-        <i className="fas fa-user"></i> Let's get some information to make your
-        profile stand out
-      </p>
+      <Heading fontWeight="light" color="highlight" fontSize={48}>
+        Create Your Profile
+      </Heading>
+      <Heading fontWeight="light" mt={8}>
+        Let's get some information to make your profile stand out
+      </Heading>
       <small>* = required field</small>
       <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
-          <select name="status" value={status} onChange={(e) => onChange(e)}>
+          <Select
+            name="status"
+            value={status}
+            onChange={(e) => onChange(e)}
+          >
             <option value="0">* Select Professional Status</option>
             <option value="Developer">Developer</option>
             <option value="Junior Developer">Junior Developer</option>
             <option value="Senior Developer">Senior Developer</option>
             <option value="Manager">Manager</option>
-            <option value="Student or Learning">Student or Learning</option>
+            <option value="Student or Learning">
+              Student or Learning
+            </option>
             <option value="Instructor">Instructor or Teacher</option>
             <option value="Intern">Intern</option>
             <option value="Other">Other</option>
-          </select>
+          </Select>
           <small className="form-text">
             Give us an idea of where you are at in your career
           </small>
         </div>
         <div className="form-group">
-          <input
+          <Input
             type="text"
             placeholder="Company"
             name="company"
@@ -83,7 +91,7 @@ function CreateProfile({ createProfile, history }) {
           </small>
         </div>
         <div className="form-group">
-          <input
+          <Input
             type="text"
             placeholder="Website"
             name="website"
@@ -95,7 +103,7 @@ function CreateProfile({ createProfile, history }) {
           </small>
         </div>
         <div className="form-group">
-          <input
+          <Input
             type="text"
             placeholder="Location"
             name="location"
@@ -107,7 +115,7 @@ function CreateProfile({ createProfile, history }) {
           </small>
         </div>
         <div className="form-group">
-          <input
+          <Input
             type="text"
             placeholder="* Skills"
             name="skills"
@@ -115,11 +123,12 @@ function CreateProfile({ createProfile, history }) {
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
+            Please use comma separated values (eg.
+            HTML,CSS,JavaScript,PHP)
           </small>
         </div>
         <div className="form-group">
-          <input
+          <Input
             type="text"
             placeholder="Github Username"
             name="githubusername"
@@ -127,8 +136,8 @@ function CreateProfile({ createProfile, history }) {
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            If you want your latest repos and a Github link, include your
-            username
+            If you want your latest repos and a Github link, include
+            your username
           </small>
         </div>
         <div className="form-group">
@@ -138,7 +147,10 @@ function CreateProfile({ createProfile, history }) {
             value={bio}
             onChange={(e) => onChange(e)}
           ></textarea>
-          <small className="form-text">Tell us a little about yourself</small>
+          <small className="form-text">
+            Tell us a little about yourself
+          </small>
+          {/* <Input placeholder="Tell us a little about yourself" /> */}
         </div>
 
         <div className="my-2">
@@ -154,9 +166,9 @@ function CreateProfile({ createProfile, history }) {
 
         {displaySocialInputs && (
           <Fragment>
-            <div className="form-group social-input">
+            <div className="form-group social-Input">
               <i className="fab fa-twitter fa-2x"></i>
-              <input
+              <Input
                 type="text"
                 placeholder="Twitter URL"
                 name="twitter"
@@ -165,9 +177,9 @@ function CreateProfile({ createProfile, history }) {
               />
             </div>
 
-            <div className="form-group social-input">
+            <div className="form-group social-Input">
               <i className="fab fa-facebook fa-2x"></i>
-              <input
+              <Input
                 type="text"
                 placeholder="Facebook URL"
                 name="facebook"
@@ -176,9 +188,9 @@ function CreateProfile({ createProfile, history }) {
               />
             </div>
 
-            <div className="form-group social-input">
+            <div className="form-group social-Input">
               <i className="fab fa-youtube fa-2x"></i>
-              <input
+              <Input
                 type="text"
                 placeholder="YouTube URL"
                 name="youtube"
@@ -187,9 +199,9 @@ function CreateProfile({ createProfile, history }) {
               />
             </div>
 
-            <div className="form-group social-input">
+            <div className="form-group social-Input">
               <i className="fab fa-linkedin fa-2x"></i>
-              <input
+              <Input
                 type="text"
                 placeholder="Linkedin URL"
                 name="linkedin"
@@ -198,9 +210,9 @@ function CreateProfile({ createProfile, history }) {
               />
             </div>
 
-            <div className="form-group social-input">
+            <div className="form-group social-Input">
               <i className="fab fa-instagram fa-2x"></i>
-              <input
+              <Input
                 type="text"
                 placeholder="Instagram URL"
                 name="instagram"
@@ -211,9 +223,11 @@ function CreateProfile({ createProfile, history }) {
           </Fragment>
         )}
 
-        <input type="submit" className="btn btn-primary my-1" />
-        <Link className="btn btn-light my-1" to="/dashboard">
-          Go Back
+        <Button type="submit" onClick={onSubmit} bg="highlight">
+          Submit
+        </Button>
+        <Link to="/dashboard">
+          <Button bg="danger">Go Back</Button>
         </Link>
       </form>
     </Fragment>
@@ -224,4 +238,6 @@ CreateProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
 };
 
-export default connect(null, { createProfile })(withRouter(CreateProfile));
+export default connect(null, { createProfile })(
+  withRouter(CreateProfile)
+);
