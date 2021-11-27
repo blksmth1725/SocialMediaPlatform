@@ -10,7 +10,7 @@ import {
   getCurrentProfile,
   deleteAccount,
 } from "../../actions/profile";
-import { Box, Heading, Spacer } from "@chakra-ui/layout";
+import { Box, Heading } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
 
 const Dashboard = ({
@@ -26,13 +26,13 @@ const Dashboard = ({
   return loading && profile === null ? (
     <Spinner />
   ) : (
-    <Box bg="tomato" h="70vh">
+    <Box h="70vh" w="100%">
       <Heading fontSize={48} fontWeight="light" color="highlight">
         Dashboard
       </Heading>
-      <p className="lead">
-        <i className="fas fa-user" /> Welcome {user && user.name}
-      </p>
+      <Heading fontWeight="light" mt={8}>
+        Welcome, {user && user.name}
+      </Heading>
       {profile !== null ? (
         <Fragment>
           <DashboardActions />
@@ -49,14 +49,20 @@ const Dashboard = ({
           </div>
         </Fragment>
       ) : (
-        <Fragment>
-          <p>
+        <Box w="100%">
+          <Heading
+            opacity="70%"
+            fontSize={24}
+            fontWeight="light"
+            mb={8}
+            mt={4}
+          >
             You have not yet setup a profile, please add some info
-          </p>
+          </Heading>
           <Link to="/create-profile">
             <Button bg="highlight">Create Profile</Button>
           </Link>
-        </Fragment>
+        </Box>
       )}
     </Box>
   );

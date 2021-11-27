@@ -26,6 +26,7 @@ import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 
 import "./App.css";
+import { Box } from "@chakra-ui/layout";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -40,7 +41,7 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <Navbar />
-        <Fragment>
+        <Box>
           <Route exact path="/" component={Landing} />
           <section className="container">
             <Alert />
@@ -82,7 +83,7 @@ const App = () => {
               />
             </Switch>
           </section>
-        </Fragment>
+        </Box>
       </Router>
     </Provider>
   );
