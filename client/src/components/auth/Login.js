@@ -35,7 +35,9 @@ const Login = ({ login, isAuthenticated }) => {
   return (
     <Fragment>
       <Box bg="grey.800">
-        <Text fontSize={30}> Sign Into Your Account</Text>
+        <Text fontSize={30}> Sign In</Text>
+        <Text fontSize={30}>Username: Guest@gmail.com</Text>
+        <Text fontSize={30}>Password: Password123</Text>
         <form className="form" onSubmit={(e) => onSubmit(e)}>
           <div className="form-group">
             <Input

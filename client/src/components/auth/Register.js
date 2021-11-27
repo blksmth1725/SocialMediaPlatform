@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { setAlert } from "../../actions/alert";
 import { register } from "../../actions/auth";
+import { Input, Button, Heading, Spacer } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
@@ -37,13 +38,16 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   return (
     <Fragment>
       <section className="container">
-        <h1 className="large text-primary">Sign Up</h1>
+        <Heading color="highlight" fontsize={96} fontWeight="light">
+          Sign Up
+        </Heading>
+        <Spacer />
         <p className="lead">
           <i className="fas fa-user"></i> Create Your Account
         </p>
         <form className="form" onSubmit={(e) => onSubmit(e)}>
           <div className="form-group">
-            <input
+            <Input
               type="text"
               placeholder="Name"
               name="name"
@@ -52,7 +56,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             />
           </div>
           <div className="form-group">
-            <input
+            <Input
               type="email"
               placeholder="Email Address"
               name="email"
@@ -60,12 +64,12 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               onChange={(e) => onChange(e)}
             />
             <small className="form-text">
-              This site uses Gravatar so if you want a profile image, use a
-              Gravatar email
+              This site uses Gravatar so if you want a profile image,
+              use a Gravatar email
             </small>
           </div>
           <div className="form-group">
-            <input
+            <Input
               type="password"
               placeholder="Password"
               name="password"
@@ -74,7 +78,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             />
           </div>
           <div className="form-group">
-            <input
+            <Input
               type="password"
               placeholder="Confirm Password"
               name="password2"
@@ -82,7 +86,15 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               onChange={(e) => onChange(e)}
             />
           </div>
-          <input type="submit" className="btn btn-primary" value="Register" />
+          <Button
+            variant="solid"
+            bg="highlight"
+            type="submit"
+            className="btn btn-primary"
+            value="Register"
+          >
+            Register
+          </Button>
         </form>
         <p className="my-1">
           Already have an account? <Link to="/login">Sign In</Link>

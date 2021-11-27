@@ -18,7 +18,7 @@ const Landing = ({ isAuthenticated }) => {
   }
 
   return (
-    <Flex mt={44} p={16}>
+    <Flex mt={56} pl={32} pr={32}>
       <Box w="50%">
         <Stack spacing={2}>
           <Spacer />
@@ -36,7 +36,7 @@ const Landing = ({ isAuthenticated }) => {
             A web developer
           </Heading>
           <Spacer />
-          <Text space={20}>
+          <Text space={20} pr={28}>
             Check out my protfolio. In it I strive to understand
             people, technology, and how they interact to build useful
             applications and features. The goal is to help others
