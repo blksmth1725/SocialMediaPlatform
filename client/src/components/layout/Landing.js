@@ -22,21 +22,26 @@ const Landing = ({ isAuthenticated }) => {
       <Box w="50%">
         <Stack spacing={2}>
           <Spacer />
-          <Heading color="highlight" fontsize={96} fontWeight="light">
+          <Heading color="highlight" fontSize={34} fontWeight="light">
             Hi, I'm
           </Heading>
           <Heading
-            fontsize={62}
+            fontSize={52}
             fontWeight="semibold"
             letterSpacing="wider"
           >
             Christian Sheen
           </Heading>
-          <Heading color="highlight" fontsize={50} fontWeight="light">
+          <Heading color="highlight" fontSize={34} fontWeight="light">
             A web developer
           </Heading>
           <Spacer />
-          <Text space={20} pr={28}>
+          <Spacer />
+          <Spacer />
+          <Spacer />
+          <Spacer />
+          <Spacer />
+          <Text fontSize={24} space={20} pr={28}>
             Check out my protfolio. In it I strive to understand
             people, technology, and how they interact to build useful
             applications and features. The goal is to help others

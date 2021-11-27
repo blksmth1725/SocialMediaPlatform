@@ -39,8 +39,8 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
+        <Navbar />
         <Fragment>
-          <Navbar />
           <Route exact path="/" component={Landing} />
           <section className="container">
             <Alert />

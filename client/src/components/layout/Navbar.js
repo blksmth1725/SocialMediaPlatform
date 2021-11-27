@@ -8,32 +8,27 @@ import { Button } from "@chakra-ui/button";
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
-    <ul>
-      <Flex>
-        <li>
-          <Link to="/profiles">Developers</Link>
-        </li>
-        <li>
-          <Link to="/posts">Posts</Link>
-        </li>
-        <li>
-          <Link to="/dashboard">
-            <i className="fas fa-user" />{" "}
-            <span className="hide-sm"> Dashboard</span>
-          </Link>
-        </li>
-        <li>
-          <Link onClick={logout} to="/">
-            <i className="fas fa-sign-out-alt" />{" "}
-            <span className="hide-sm">Logout</span>
-          </Link>
-        </li>
-      </Flex>
-    </ul>
+    <Flex w={96}>
+      <Link to="/profiles">Developers</Link>
+      <Spacer />
+      <Link to="/posts">Posts</Link>
+      <Spacer />
+
+      <Link to="/dashboard">
+        <i className="fas fa-user" />{" "}
+        <span className="hide-sm"> Dashboard</span>
+      </Link>
+      <Spacer />
+
+      <Link onClick={logout} to="/">
+        <i className="fas fa-sign-out-alt" />{" "}
+        <span className="hide-sm">Logout</span>
+      </Link>
+    </Flex>
   );
 
   const guestLinks = (
-    <Flex>
+    <Flex w={36}>
       <Link to="/profiles">Profiles</Link>
       <Spacer />
       <Link to="/register">Register</Link>
@@ -49,8 +44,8 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       w="100%"
       justify="center"
       align="center"
-      pl={16}
-      pr={16}
+      pl={32}
+      pr={32}
     >
       <Box>
         <Link to="/">
@@ -60,9 +55,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <Spacer />
       <Box>
         {!loading && (
-          <Fragment>
-            {isAuthenticated ? authLinks : guestLinks}
-          </Fragment>
+          <Flex>{isAuthenticated ? authLinks : guestLinks}</Flex>
         )}
       </Box>
     </Flex>
