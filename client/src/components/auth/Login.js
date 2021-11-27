@@ -3,10 +3,9 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { login } from "../../actions/auth";
-import { Box, Text } from "@chakra-ui/layout";
+import { Box, Flex, Text } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
 import { Input } from "@chakra-ui/input";
-import { Image } from "@chakra-ui/image";
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -36,7 +35,7 @@ const Login = ({ login, isAuthenticated }) => {
   return (
     <Fragment>
       <Box bg="grey.800">
-        <Text> Sign Into Your Account</Text>
+        <Text fontSize={30}> Sign Into Your Account</Text>
         <form className="form" onSubmit={(e) => onSubmit(e)}>
           <div className="form-group">
             <Input
@@ -64,7 +63,7 @@ const Login = ({ login, isAuthenticated }) => {
             />
           </div>
 
-          <Button type="submit" variant="solid" bg="primary">
+          <Button type="submit" variant="solid" bg="highlight">
             Login
           </Button>
         </form>

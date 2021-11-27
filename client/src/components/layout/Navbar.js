@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
 import { Box, Flex, Spacer } from "@chakra-ui/layout";
+import { Button } from "@chakra-ui/button";
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
@@ -32,29 +33,28 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   );
 
   const guestLinks = (
-    <ul>
-      <Flex>
-        <li>
-          <Link to="/profiles">Profiles</Link>
-        </li>
-        <li>
-          <Link to="/register">Register</Link>
-        </li>
-      </Flex>
-    </ul>
+    <Flex>
+      <Link to="/profiles">Profiles</Link>
+      <Spacer />
+      <Link to="/register">Register</Link>
+    </Flex>
   );
 
   return (
     <Flex
       bg="gray.600"
-      h="3.5rem"
+      h={20}
       borderBottom="4px"
-      borderColor="teal.400"
+      borderColor="highlight"
       w="100%"
+      justify="center"
+      align="center"
+      pl={16}
+      pr={16}
     >
       <Box>
         <Link to="/">
-          <i className="fas fa-code"></i> DevConnector
+          <i className="fas fa-code"></i> BlkSmth.io
         </Link>
       </Box>
       <Spacer />
