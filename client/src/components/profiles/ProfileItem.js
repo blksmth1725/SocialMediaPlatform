@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { List, ListItem, ListIcon } from "@chakra-ui/react";
-import { Heading, Text } from "@chakra-ui/layout";
+import { Heading, Spacer, Text } from "@chakra-ui/layout";
 import { Image } from "@chakra-ui/image";
 import { Button } from "@chakra-ui/button";
 import { Icon } from "@chakra-ui/react";
-import { MdSettings } from "react-icons/md";
+import { FaCheck } from "react-icons/fa";
 
 const ProfileItem = ({
   profile: {
@@ -52,7 +52,7 @@ const ProfileItem = ({
             key={index}
             className="text-primary"
           >
-            <Icon as={MdSettings} />
+            <Icon as={FaCheck} mr={2} />
             {skill}
           </ListItem>
         ))}
