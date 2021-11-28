@@ -19,11 +19,17 @@ const Profiles = ({
         <Spinner />
       ) : (
         <Fragment>
-          <h1 className="large text-primary">Developers</h1>
-          <p className="lead">
-            <i className="fab fa-connectdevelop" /> Browse and connect
-            with developers
-          </p>
+          <Heading color="highlight" fontWeight="light" fontSize={48}>
+            Profiles on the platform
+          </Heading>
+          <Heading
+            opacity="50%"
+            mb={6}
+            fontWeight="light"
+            fontSize={34}
+          >
+            Browse the "other users"
+          </Heading>
           <div className="profiles">
             {profiles.length > 0 ? (
               profiles.map((profile) => (

@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { Box, Heading, Text } from "@chakra-ui/layout";
+import { List, ListItem, ListIcon } from "@chakra-ui/react";
+import { Heading, Text } from "@chakra-ui/layout";
 import { Image } from "@chakra-ui/image";
+import { Button } from "@chakra-ui/button";
+import { Icon } from "@chakra-ui/react";
+import { MdSettings } from "react-icons/md";
 
 const ProfileItem = ({
   profile: {
@@ -21,24 +25,38 @@ const ProfileItem = ({
     <div className="profile bg-light">
       <Image src={avatar} alt="" borderRadius="50%" />
       <div>
-        <Heading fontSize={34} fontWeight="semibold">
+        <Heading fontSize={34} fontWeight="light">
           {capitalize(name)}
         </Heading>
-        <p>
+        <Text fontSize={20}>
           {status} {company && <span> at {company}</span>}
-        </p>
-        <p className="my-1">{location && <span>{location}</span>}</p>
-        <Link to={`/profile/${_id}`} className="btn btn-primary">
-          View Profile
+        </Text>
+        <Text opacity="50%" fontSize={20} mb={6}>
+          {location && <span>{location}</span>}
+        </Text>
+        <Link to={`/profile/${_id}`}>
+          <Button
+            _hover={{ bg: "#ebedf0", color: "highlight" }}
+            variant="solid"
+            bg="highlight"
+            color="white"
+          >
+            View Profile
+          </Button>
         </Link>
       </div>
-      <ul>
+      <List>
         {skills.slice(0, 4).map((skill, index) => (
-          <li key={index} className="text-primary">
-            <i className="fas fa-check"></i> {skill}
-          </li>
+          <ListItem
+            color="highlight"
+            key={index}
+            className="text-primary"
+          >
+            <Icon as={MdSettings} />
+            {skill}
+          </ListItem>
         ))}
-      </ul>
+      </List>
     </div>
   );
 };
