@@ -27,8 +27,8 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   );
 
   const guestLinks = (
-    <Flex w={36}>
-      <Link to="/profiles">Profiles</Link>
+    <Flex w={52}>
+      <Link to="/profiles">Created Profiles</Link>
       <Spacer />
       <Link to="/register">Register</Link>
     </Flex>

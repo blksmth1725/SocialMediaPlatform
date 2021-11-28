@@ -4,8 +4,12 @@ import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
 import ProfileItem from "./ProfileItem";
 import { getProfiles } from "../../actions/profile";
+import { Box, Heading, Text } from "@chakra-ui/layout";
 
-const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
+const Profiles = ({
+  getProfiles,
+  profile: { profiles, loading },
+}) => {
   useEffect(() => {
     getProfiles();
   }, [getProfiles]);
@@ -17,8 +21,8 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Fragment>
           <h1 className="large text-primary">Developers</h1>
           <p className="lead">
-            <i className="fab fa-connectdevelop" /> Browse and connect with
-            developers
+            <i className="fab fa-connectdevelop" /> Browse and connect
+            with developers
           </p>
           <div className="profiles">
             {profiles.length > 0 ? (

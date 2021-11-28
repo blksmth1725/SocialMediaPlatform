@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Box, Heading, Text } from "@chakra-ui/layout";
+import { Image } from "@chakra-ui/image";
 
 const ProfileItem = ({
   profile: {
@@ -11,11 +13,17 @@ const ProfileItem = ({
     skills,
   },
 }) => {
+  const capitalize = (s) => {
+    return s[0].toUpperCase() + s.slice(1);
+  };
+
   return (
     <div className="profile bg-light">
-      <img src={avatar} alt="" className="round-image" />
+      <Image src={avatar} alt="" borderRadius="50%" />
       <div>
-        <h2>{name}</h2>
+        <Heading fontSize={34} fontWeight="semibold">
+          {capitalize(name)}
+        </Heading>
         <p>
           {status} {company && <span> at {company}</span>}
         </p>

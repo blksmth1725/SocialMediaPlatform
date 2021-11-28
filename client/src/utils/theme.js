@@ -6,6 +6,7 @@ export const appTheme = extendTheme({
     white: "#fff",
     primary: "#2D3748",
     secondary: "#2B6CB0",
+    light: "#f4f4f4",
     highlight: "#38B2AC",
     warning: "#FFC75F",
     danger: "#C34A36",

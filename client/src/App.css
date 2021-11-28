@@ -166,6 +166,7 @@ img {
 .alert-light {
   background: var(--light-color);
   color: #333;
+  border-radius: 10px;
 }
 
 .btn-dark,
