@@ -1,43 +1,55 @@
 import React, { Fragment } from "react";
-import PropTypes from "prop-types";
+import { BsTrash } from "react-icons/bs";
 import { connect } from "react-redux";
+
+import PropTypes from "prop-types";
+
+import { Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/layout";
+import { Icon } from "@chakra-ui/icon";
+
 import { deleteExperience } from "../../actions/profile";
 import formatDate from "../../utils/formatDate";
 
 const Experience = ({ experience, deleteExperience }) => {
   const experiences = experience.map((exp) => (
-    <tr key={exp._id}>
-      <td>{exp.company}</td>
-      <td className="hide-sm">{exp.title}</td>
-      <td>
+    <Tr key={exp._id}>
+      <Td>{exp.company}</Td>
+      <Td className="hide-sm">{exp.title}</Td>
+      <Td>
         {formatDate(exp.from)} - {exp.to ? formatDate(exp.to) : "Now"}
-      </td>
-      <td>
-        <button
-          onClick={() => deleteExperience(exp._id)}
-          className="btn btn-danger"
-        >
-          Delete
-        </button>
-      </td>
-    </tr>
+      </Td>
+
+      <Button
+        mt={2}
+        ml={8}
+        variant="solid"
+        bg="danger"
+        onClick={() => deleteExperience(exp._id)}
+      >
+        <Icon as={BsTrash} mr={2} />
+        Delete
+      </Button>
+    </Tr>
   ));
 
   return (
-    <Fragment>
-      <h2 className="my-2">Experience Credentials</h2>
-      <table className="table">
-        <thead>
-          <tr>
-            <th>Company</th>
-            <th className="hide-sm">Title</th>
-            <th className="hide-sm">Years</th>
-            <th />
-          </tr>
-        </thead>
-        <tbody>{experiences}</tbody>
-      </table>
-    </Fragment>
+    <Box mt={16}>
+      <Heading fontSize={34} fontWeight="light">
+        Experience Credentials
+      </Heading>
+      <Table mt={6} variant="simple" borderColor="highlight">
+        <Thead>
+          <Tr>
+            <Th>Company</Th>
+            <Th>Title</Th>
+            <Th>Years</Th>
+          </Tr>
+        </Thead>
+        <Tbody>{experiences}</Tbody>
+      </Table>
+    </Box>
   );
 };
 

@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addExperience } from "../../actions/profile";
+import { Input } from "@chakra-ui/react";
 
 function AddExperience({ addExperience, history }) {
   const [formData, setFormData] = useState({
@@ -17,7 +18,8 @@ function AddExperience({ addExperience, history }) {
 
   const [toDateDisabled, toggleDisabled] = useState(false);
 
-  const { company, title, location, from, to, current, description } = formData;
+  const { company, title, location, from, to, current, description } =
+    formData;
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,8 +28,8 @@ function AddExperience({ addExperience, history }) {
     <Fragment>
       <h1 class="large text-primary">Add An Experience</h1>
       <p class="lead">
-        <i class="fas fa-code-branch"></i> Add any developer/programming
-        positions that you have had in the past
+        <i class="fas fa-code-branch"></i> Add any
+        developer/programming positions that you have had in the past
       </p>
       <small>* = required field</small>
       <form
@@ -38,7 +40,7 @@ function AddExperience({ addExperience, history }) {
         }}
       >
         <div class="form-group">
-          <input
+          <Input
             type="text"
             placeholder="* Job Title"
             name="title"
@@ -48,7 +50,7 @@ function AddExperience({ addExperience, history }) {
           />
         </div>
         <div class="form-group">
-          <input
+          <Input
             type="text"
             placeholder="* Company"
             name="company"
@@ -58,7 +60,7 @@ function AddExperience({ addExperience, history }) {
           />
         </div>
         <div class="form-group">
-          <input
+          <Input
             type="text"
             placeholder="Location"
             name="location"
@@ -68,7 +70,7 @@ function AddExperience({ addExperience, history }) {
         </div>
         <div class="form-group">
           <h4>From Date</h4>
-          <input
+          <Input
             type="date"
             name="from"
             value={from}
@@ -77,7 +79,7 @@ function AddExperience({ addExperience, history }) {
         </div>
         <div class="form-group">
           <p>
-            <input
+            <Input
               type="checkbox"
               name="current"
               checked={current}
@@ -92,7 +94,7 @@ function AddExperience({ addExperience, history }) {
         </div>
         <div class="form-group">
           <h4>To Date</h4>
-          <input
+          <Input
             type="date"
             name="to"
             value={to}
@@ -110,7 +112,7 @@ function AddExperience({ addExperience, history }) {
             onChange={(e) => onChange(e)}
           ></textarea>
         </div>
-        <input type="submit" class="btn btn-primary my-1" />
+        <Input type="submit" class="btn btn-primary my-1" />
         <Link class="btn btn-light my-1" to="/dashboard">
           Go Back
         </Link>

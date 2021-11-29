@@ -8,7 +8,7 @@ import { Box, Flex, Spacer } from "@chakra-ui/layout";
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <Flex w={96}>
-      <Link to="/profiles">Developers</Link>
+      <Link to="/profiles">Created Profiles</Link>
       <Spacer />
       <Link to="/posts">Posts</Link>
       <Spacer />

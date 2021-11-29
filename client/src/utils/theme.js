@@ -9,7 +9,7 @@ export const appTheme = extendTheme({
     light: "#f4f4f4",
     highlight: "#38B2AC",
     warning: "#FFC75F",
-    danger: "#C34A36",
+    danger: "#E53E3E",
   },
   space: {
     px: "1px",

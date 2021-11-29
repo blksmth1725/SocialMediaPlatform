@@ -12,6 +12,7 @@ import {
 } from "../../actions/profile";
 import { Box, Heading } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
+import { Flex } from "@chakra-ui/react";
 
 const Dashboard = ({
   deleteAccount,
@@ -30,23 +31,25 @@ const Dashboard = ({
       <Heading fontSize={48} fontWeight="light" color="highlight">
         Dashboard
       </Heading>
-      <Heading fontWeight="light" mt={8}>
+      <Heading fontWeight="light" opacity="50%">
         Welcome, {user && user.name}
       </Heading>
       {profile !== null ? (
         <Fragment>
-          <DashboardActions />
           <Experience experience={profile.experience} />
           <Education education={profile.education} />
 
-          <div className="my-2">
-            <button
-              className="btn btn-danger"
+          <Flex>
+            <DashboardActions />
+
+            <Button
+              variant="solid"
+              bg="danger"
               onClick={() => deleteAccount()}
             >
-              <i className="fas fa-user-minus" /> Delete My Account
-            </button>
-          </div>
+              Delete My Account
+            </Button>
+          </Flex>
         </Fragment>
       ) : (
         <Box w="100%">
