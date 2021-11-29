@@ -10,7 +10,7 @@ import { MdCastForEducation } from "react-icons/md";
 
 const DashboardActions = () => {
   return (
-    <Box mt={4}>
+    <Box mt={10}>
       <Flex>
         <Link to="/edit-profile">
           <Button bg="highlight" mr={4}>

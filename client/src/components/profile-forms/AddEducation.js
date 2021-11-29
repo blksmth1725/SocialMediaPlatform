@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addEducation } from "../../actions/profile";
 
+import { Input } from "@chakra-ui/react";
+
 function AddEducation({ addEducation, history }) {
   const [formData, setFormData] = useState({
     school: "",
@@ -34,8 +36,8 @@ function AddEducation({ addEducation, history }) {
     <Fragment>
       <h1 class="large text-primary">Add Your Education</h1>
       <p class="lead">
-        <i class="fas fa-graduation-cap"></i> Add any school or bootcamp you
-        have attended
+        <i class="fas fa-graduation-cap"></i> Add any school or
+        bootcamp you have attended
       </p>
       <small>* = required field</small>
       <form
@@ -46,7 +48,7 @@ function AddEducation({ addEducation, history }) {
         }}
       >
         <div class="form-group">
-          <input
+          <Input
             type="text"
             placeholder="* School or Bootcamp"
             name="school"
@@ -56,7 +58,7 @@ function AddEducation({ addEducation, history }) {
           />
         </div>
         <div class="form-group">
-          <input
+          <Input
             type="text"
             placeholder="* Degree or Certificate"
             name="degree"
@@ -66,7 +68,7 @@ function AddEducation({ addEducation, history }) {
           />
         </div>
         <div class="form-group">
-          <input
+          <Input
             type="text"
             placeholder="Field Of Study"
             name="fieldofstudy"
@@ -76,7 +78,7 @@ function AddEducation({ addEducation, history }) {
         </div>
         <div class="form-group">
           <h4>From Date</h4>
-          <input
+          <Input
             type="date"
             name="from"
             value={from}
@@ -85,7 +87,7 @@ function AddEducation({ addEducation, history }) {
         </div>
         <div class="form-group">
           <p>
-            <input
+            <Input
               type="checkbox"
               name="current"
               value={current}
@@ -99,7 +101,7 @@ function AddEducation({ addEducation, history }) {
         </div>
         <div class="form-group">
           <h4>To Date</h4>
-          <input
+          <Input
             type="date"
             name="to"
             value={to}
@@ -117,7 +119,7 @@ function AddEducation({ addEducation, history }) {
             onChange={(e) => onChange(e)}
           ></textarea>
         </div>
-        <input type="submit" class="btn btn-primary my-1" />
+        <Input type="submit" class="btn btn-primary my-1" />
         <Link class="btn btn-light my-1" to="/dashboard">
           Go Back
         </Link>

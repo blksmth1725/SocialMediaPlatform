@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
-import { BsTrash } from "react-icons/bs";
 import { connect } from "react-redux";
 
 import PropTypes from "prop-types";
 
 import { Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
+import { BsTrash } from "react-icons/bs";
 import { Button } from "@chakra-ui/react";
 import { Box, Heading } from "@chakra-ui/layout";
 import { Icon } from "@chakra-ui/icon";
@@ -35,11 +35,11 @@ const Experience = ({ experience, deleteExperience }) => {
   ));
 
   return (
-    <Box mt={16}>
-      <Heading fontSize={34} fontWeight="light">
+    <Box mt={10}>
+      <Heading fontSize={28} fontWeight="light">
         Experience Credentials
       </Heading>
-      <Table mt={6} variant="simple" borderColor="highlight">
+      <Table mt={5} variant="simple" borderColor="highlight">
         <Thead>
           <Tr>
             <Th>Company</Th>

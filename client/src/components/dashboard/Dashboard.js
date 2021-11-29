@@ -43,6 +43,7 @@ const Dashboard = ({
             <DashboardActions />
 
             <Button
+              mt={10}
               variant="solid"
               bg="danger"
               onClick={() => deleteAccount()}
