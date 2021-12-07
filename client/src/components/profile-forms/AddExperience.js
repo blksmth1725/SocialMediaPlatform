@@ -49,8 +49,8 @@ function AddExperience({ addExperience, history }) {
       >
         <div class="form-group">
           <Input
+            color="black"
             bg="white"
-            text="black"
             type="text"
             placeholder="* Job Title"
             name="title"
@@ -85,8 +85,8 @@ function AddExperience({ addExperience, history }) {
         <div class="form-group">
           <h4>From Date</h4>
           <Input
-            bg="white"
             color="black"
+            bg="white"
             type="date"
             name="from"
             value={from}
@@ -103,7 +103,7 @@ function AddExperience({ addExperience, history }) {
               name="current"
               checked={current}
               value={current}
-              onClick={(e) => {
+              onChange={(e) => {
                 setFormData({ ...formData, current: !current });
                 toggleDisabled(!toDateDisabled);
               }}
