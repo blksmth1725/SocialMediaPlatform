@@ -1,9 +1,15 @@
 import React, { Fragment, useState } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addExperience } from "../../actions/profile";
-import { Input } from "@chakra-ui/react";
+import {
+  Input,
+  Textarea,
+  Button,
+  Text,
+  Checkbox,
+} from "@chakra-ui/react";
 
 function AddExperience({ addExperience, history }) {
   const [formData, setFormData] = useState({
@@ -26,7 +32,9 @@ function AddExperience({ addExperience, history }) {
 
   return (
     <Fragment>
-      <h1 class="large text-primary">Add An Experience</h1>
+      <Text color="highlight" fontSize={48} fontWeight="light">
+        Add An Experience
+      </Text>
       <p class="lead">
         <i class="fas fa-code-branch"></i> Add any
         developer/programming positions that you have had in the past
@@ -41,6 +49,8 @@ function AddExperience({ addExperience, history }) {
       >
         <div class="form-group">
           <Input
+            bg="white"
+            text="black"
             type="text"
             placeholder="* Job Title"
             name="title"
@@ -51,8 +61,10 @@ function AddExperience({ addExperience, history }) {
         </div>
         <div class="form-group">
           <Input
+            bg="white"
+            color="black"
             type="text"
-            placeholder="* Company"
+            placeholder="Company"
             name="company"
             value={company}
             onChange={(e) => onChange(e)}
@@ -61,6 +73,8 @@ function AddExperience({ addExperience, history }) {
         </div>
         <div class="form-group">
           <Input
+            bg="white"
+            color="black"
             type="text"
             placeholder="Location"
             name="location"
@@ -71,6 +85,8 @@ function AddExperience({ addExperience, history }) {
         <div class="form-group">
           <h4>From Date</h4>
           <Input
+            bg="white"
+            color="black"
             type="date"
             name="from"
             value={from}
@@ -79,22 +95,28 @@ function AddExperience({ addExperience, history }) {
         </div>
         <div class="form-group">
           <p>
-            <Input
+            <Checkbox
+              colorScheme="blue"
+              size="lg"
+              mr={2}
               type="checkbox"
               name="current"
               checked={current}
               value={current}
-              onChange={(e) => {
+              onClick={(e) => {
                 setFormData({ ...formData, current: !current });
                 toggleDisabled(!toDateDisabled);
               }}
-            />{" "}
-            Current Job
+            >
+              Current Job
+            </Checkbox>
           </p>
         </div>
         <div class="form-group">
           <h4>To Date</h4>
           <Input
+            bg="white"
+            color="black"
             type="date"
             name="to"
             value={to}
@@ -103,19 +125,26 @@ function AddExperience({ addExperience, history }) {
           />
         </div>
         <div class="form-group">
-          <textarea
+          <Textarea
+            bg="white"
+            color="black"
             name="description"
             cols="30"
             rows="5"
             placeholder="Job Description"
             value={description}
             onChange={(e) => onChange(e)}
-          ></textarea>
+          ></Textarea>
         </div>
-        <Input type="submit" class="btn btn-primary my-1" />
-        <Link class="btn btn-light my-1" to="/dashboard">
-          Go Back
-        </Link>
+        <Input
+          bg="highlight"
+          color="white"
+          type="submit"
+          class="btn btn-primary my-1"
+        />
+        <Button mt={4} color="white" bg="highlight">
+          <Link to="/dashboard">Go Back</Link>
+        </Button>
       </form>
     </Fragment>
   );

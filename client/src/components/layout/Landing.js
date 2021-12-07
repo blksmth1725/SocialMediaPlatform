@@ -18,7 +18,7 @@ const Landing = ({ isAuthenticated }) => {
   }
 
   return (
-    <Flex mt={56} pl={32} pr={32}>
+    <Flex mt={36} pl={32} pr={32}>
       <Box w="50%">
         <Stack spacing={2}>
           <Spacer />

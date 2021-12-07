@@ -27,7 +27,7 @@ const Dashboard = ({
   return loading && profile === null ? (
     <Spinner />
   ) : (
-    <Box h="70vh" w="100%">
+    <Box h="100vh" w="100%" border="3px" boxSizing="border-box">
       <Heading fontSize={48} fontWeight="light" color="highlight">
         Dashboard
       </Heading>

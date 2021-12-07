@@ -6,7 +6,7 @@ import formatDate from "../../utils/formatDate";
 import { Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
 import { BsTrash } from "react-icons/bs";
 import { Button } from "@chakra-ui/react";
-import { Box, Heading, Spacer } from "@chakra-ui/layout";
+import { Heading } from "@chakra-ui/layout";
 import { Icon } from "@chakra-ui/icon";
 
 const Education = ({ education, deleteEducation }) => {
